@@ -1,0 +1,14 @@
+version: 2
+ethernets:
+  enp0s3:
+    match:
+      name: "enp0s3"
+    set-name: enp0s3
+    dhcp4: true
+    dhcp6: true
+  enp0s8:
+    match:
+      name: "enp0s8"
+    set-name: enp0s8
+    dhcp4: true
+    dhcp6: true

@@ -1,0 +1,2 @@
+instance-id: k8s-cluster-worker
+local-hostname: k8s-cluster-worker

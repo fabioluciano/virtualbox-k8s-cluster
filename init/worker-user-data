@@ -1,0 +1,26 @@
+#cloud-config
+locale: en_US
+timezone: America/Sao_Paulo
+
+ntp:
+  enabled: true
+  ntp_client: chrony
+
+package_upgrade: true
+package_reboot_if_required: true
+
+ssh_pwauth: true
+chpasswd:
+  expire: false
+
+users:
+  - default
+  - name: fabioluciano
+    passwd: "$6$PYIQUDARSJsu6RAC$gm8pAOILs126RfcSVFTIBT.qisEf4bfEoCnyp8SzDW2lkkzH1nFKZHqkyJiPxpmCHa3KuaIKrLPS8T5WJW1pJ1"
+    groups: [ sudo ]
+    shell: /bin/bash
+    lock_passwd: false
+
+mounts:
+    - [ /dev/sdb1, /shared]
+mount_default_fields: [None, None, auto, "defaults,nofail", "0", "2"]
